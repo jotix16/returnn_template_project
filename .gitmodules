@@ -1,0 +1,6 @@
+[submodule "returnn"]
+	path = returnn
+	url = git@github.com:rwth-i6/returnn.git
+[submodule "tools-multisetup"]
+	path = tools-multisetup
+	url = file:///u/zhobro/setups/librispeech/tools-multisetup
