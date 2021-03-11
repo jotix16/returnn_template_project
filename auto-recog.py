@@ -1,0 +1,1 @@
+tools-multisetup/auto-recog.py
