@@ -3,4 +3,4 @@
 	url = git@github.com:rwth-i6/returnn.git
 [submodule "tools-multisetup"]
 	path = tools-multisetup
-	url = file:///u/zhobro/setups/librispeech/tools-multisetup
+	url = git@github.com:jotix16/tools-multisetup.git
