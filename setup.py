@@ -10,14 +10,6 @@ def sysexecVerbose(*args, **kwargs):
     if res != 0:
         raise Exception("exit code %s" % res)
   
-
-if os.path.exists("setup-data-dir-symlink"):
-	sysexecVerbose("setup-data-dir.py")
-	sysexecVerbose("git", "commit", "setup-data-dir-symlink", "-m", "setup-data-dir-symlink")
-
-if os.path.exists("newbob.data"):
-	os.remove("newbob.data")
-
 sysexecVerbose("git", "submodule", "init")
 try:
 	sysexecVerbose("git", "submodule", "update")
