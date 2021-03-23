@@ -1,1 +1,0 @@
-./tools-multisetup/organize-configs.py
