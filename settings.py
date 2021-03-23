@@ -1,4 +1,6 @@
-# Loaded by tools-multisetup.
+# Loaded by tools-multisetup/tools/_init which calls tools-multisetup/tools/libs/load_config_py.
+# It updates the main Settings in tools-multisetup/tools.py
+# It holds settings for whole project.
 
 import os
 

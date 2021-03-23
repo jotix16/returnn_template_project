@@ -1,5 +1,18 @@
-Scripts
+# Documentation of the scripts
 
+## base_dir
+- [x] Todo.md -- todo stuff
+- [x] README.md -- basic workflow
+- [x] notes.txt -- notes about the setups
+- [x] settings.py  -- It updates the main Settings in tools-multisetup/tools.py which holds settings for the whole project.
+- [x] setup-data-dir-info.py -- where the working directory should be kept(we register only links)
+- [x] setup.sh -- setup the project
+- [x] setup.py -- same as setup.sh but uses python
+- [x] train.q.sh -- used to submit a training job to i6 cluster(e.g. qint.py train.q.sh -g 3)
+- [x] recog.q.sh -- simple beam search recognition
+- [x] recog.lm-gridsearch.q.sh -- does beam search recognition with LM shallow fusion
+
+## tools-multisetup
 - [x] _get_train_setup_dir.py -- Prints corresponding path of working dir data-train/$experiment/ for the given experiment config path. Used in shell scripts.
 - [x] cleanup-all-except.py -- Cleans all setups except the ones given as arguments. For cleaning it calls `reset-train.py` and than deletes the config under config-train/*.config.
 - [x] cleanup-old-models.py -- If use `--doit` it cleans otherwise prints old models in `data-train/model/net-model` that can be cleaned.
@@ -28,3 +41,4 @@ Scripts
 - [ ] i6lib@ -> libs/i6lib
 - [ ] lib@ -> libs/lib
 - [ ] libs/
+
