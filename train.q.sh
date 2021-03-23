@@ -1,4 +1,5 @@
 #!qint.py
+# Usage qint.py train.q.sh  (-g 3 for guarded 3 tries)
 
 concurrent part:
     trainset 1
@@ -25,6 +26,6 @@ parallel train(qsub="-notify -hard -l h_vmem=32G -l h_rt=150:00:00 -l gpu=1 -l q
     source /work/asr3/zeyer/merboldt/py-envs/py3.8-tf2.3/bin/activate
     PY="python3"
 
-    source settings.sh
+    source settings.sh # hear we source the variable $model
     stdbuf -oL $PY base/returnn/rnn.py config-train/$model.config | /u/zeyer/dotfiles/system-tools/bin/mt-cat.py
     exit ${PIPESTATUS[0]}
