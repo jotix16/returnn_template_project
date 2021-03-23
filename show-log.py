@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-
+"""
+Simplifies navigating through the qlogs in qdir.
+It calls `$less $fn`for either recog(in data-recog/) or train(in data-train/) qlog files.
+"""
 import better_exchook
 better_exchook.install()
 from argparse import ArgumentParser
@@ -53,7 +56,7 @@ def get_latest_qdir_log(path, requested_name=None):
     fn = fns[0][1]
     fn = "%s/%s" % (path, fn)
     assert os.path.exists(fn)
-    return fn
+    return fn ## path to logfile with biggest jobid
 
 
 def show_log_from_qdir(path, requested_job_name=None):
@@ -68,7 +71,7 @@ def show_log_from_qdir(path, requested_job_name=None):
 def show_train_log(model, **kwargs):
     path = "data-train/%s/qdir/q.log" % model
     show_log_from_qdir(path, **kwargs)
-    
+
 
 def show_recog_log(model, epoch, **kwargs):
     path = "data-recog/%s.%03d/qdir/q.log" % (model, epoch)
@@ -84,21 +87,19 @@ def main():
     arg_parser.add_argument("epoch", type=int, nargs='?')
     args = arg_parser.parse_args()
 
-    common_kwargs = {"model": args.model, "requested_job_name": args.job_name}
-    train_kwargs = common_kwargs
-    recog_kwargs = {"epoch": args.epoch}
-    recog_kwargs.update(common_kwargs)
+    train_kwargs = {"model": args.model, "requested_job_name": args.job_name}
+    recog_kwargs = {"model": args.model, "requested_job_name": args.job_name, "epoch": args.epoch}
 
     if args.train:
         assert not args.recog
         assert not args.epoch
         return show_train_log(**train_kwargs)
-    
+
     if args.recog:
         assert args.epoch
         assert not args.train
         return show_recog_log(**recog_kwargs)
-        
+
     if args.epoch:
         return show_recog_log(**recog_kwargs)
     else:
@@ -107,7 +108,7 @@ def main():
     print("I don't know what to do.")
     arg_parser.show_help()
     sys.exit(1)
-    
+
 
 if __name__ == "__main__":
     try:
