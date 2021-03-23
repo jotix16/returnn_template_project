@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 # checked mikel
 import os
-from lib.utils import ShellError, sysexecVerbose
+
+def sysexecVerbose(*args, **kwargs):
+    """ Prints and then executes a shell comand given by *args """
+    print("sysexec: %s" % (args,))
+    import subprocess
+    res = subprocess.call(args, shell=False, **kwargs)
+    if res != 0:
+        raise Exception("exit code %s" % res)
+  
 
 if os.path.exists("setup-data-dir-symlink"):
 	sysexecVerbose("setup-data-dir.py")
@@ -13,8 +21,9 @@ if os.path.exists("newbob.data"):
 sysexecVerbose("git", "submodule", "init")
 try:
 	sysexecVerbose("git", "submodule", "update")
-except ShellError as e:
+except Exception as e:
 	print("%s. Try to continue though, maybe still works." % e)
+
 sysexecVerbose("git", "submodule", "foreach", "git", "config", "credential.helper", "store")
 sysexecVerbose("git", "submodule", "foreach", "git", "checkout", "-B", "master", "origin/master")
 
