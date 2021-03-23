@@ -1,3 +1,4 @@
-#workdir_base = "/work/asr3/zeyer"
-workdir_base = "/tmp"
+# i6
+workdir_base = "/work/asr3/zeyer"
+
 

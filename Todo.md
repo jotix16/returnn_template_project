@@ -5,7 +5,8 @@
 - [x] README.md -- basic workflow
 - [x] notes.txt -- notes about the setups
 - [x] settings.py  -- It updates the main Settings in tools-multisetup/tools.py which holds settings for the whole project.
-- [x] setup-data-dir-info.py -- where the working directory should be kept(we register only links)
+- [x] setup-data-dir-info.py -- where the working directory should be kept(we register only links to it in base_dir) e.g.: workdir_base = "/tmp"
+- [x] setup-data-dir.py -- creates the working directory. If setup-data-dir-info.py not filled it uses /tmp for the workdir
 - [x] setup.sh -- setup the project
 - [x] setup.py -- same as setup.sh but uses python
 - [x] train.q.sh -- used to submit a training job to i6 cluster(e.g. qint.py train.q.sh -g 3)
