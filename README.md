@@ -32,7 +32,7 @@ To check if experiment is working: on cluster-cn-211 or local PC: go to data-tra
 
 ### Training
 Let's say you have config/$experiment.config.
-1. `./create-train.py $experiment` -> creates **data-train/\$experiment for config-train/\$experiment.config**
+1. `./create-train.sh $experiment` -> creates **data-train/\$experiment for config-train/\$experiment.config**
 2. `./start-train.sh $experiment` -> submit to cluster
 3. `./get-status.py`: status of all experiments, also running training/recognition jobs
 
