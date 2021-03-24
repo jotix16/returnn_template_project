@@ -3,4 +3,5 @@
 	url = git@github.com:rwth-i6/returnn.git
 [submodule "tools-multisetup"]
 	path = tools-multisetup
-	url = git@github.com:jotix16/tools-multisetup.git
+	url = https://github.com/jotix16/tools-multisetup.git
+	branch = master
