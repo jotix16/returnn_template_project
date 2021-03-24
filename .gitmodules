@@ -1,8 +1,6 @@
 [submodule "returnn"]
 	path = returnn
 	url = https://github.com/rwth-i6/returnn.git
-  branch = master
 [submodule "tools-multisetup"]
 	path = tools-multisetup
 	url = https://github.com/jotix16/tools-multisetup.git
-	branch = master
