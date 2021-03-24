@@ -54,10 +54,10 @@ Based on the scores (via extract-scores.py), some of the tools, e.g. get-status.
 
 
 ### Tools
-Most of the tools are symlinked to [tools-multisetup](tools-multisetup/), and via these tools, everything is managed. 
+Most of the tools are symlinked to [tools-multisetup](tools-multisetup), and via these tools, everything is managed. 
 For the moment these should be run on the cluster (e.g. cluster-cn-01) but we'll
 try to make them available for noncluster training too, such as colab, gcp or
-single gpu training at home. A full description of all tools can be found in [Tools](Tools).
+single gpu training at home. A full description of all tools can be found in [Tools](Tools.md).
 
 Other tools:
 * /u/beck/bin/gpu_status.py: how much other gpu jobs in the queue
