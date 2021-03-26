@@ -17,7 +17,7 @@ symlinked by [**setup-data-dir-symlink**](setup-data-dir-symlink) are captured w
 
 Beside [setup-data-dir-symlink](setup-data-dir-symlink) we have
 - [**dataset_symlink**](dataset_symlink) -- symlink showing to the dataset repository (normally set as `~/datasets`)
-- [**pkg_symlink**](pkg_symlink) -- symlink showing to `~/home/returnn/pkg`)
+- [**pkg_symlink**](pkg_symlink) -- symlink showing to `~/returnn/pkg`)
 
 ### Creating a new setup directory
 ``` python
