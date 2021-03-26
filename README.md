@@ -5,7 +5,7 @@ Every training experiment has one config in config-train, and that config name d
 The directory (at least the configs, scores, train/recog scripts, etc) is under Git.
 Returnn (crnn) and tools-multisetup (the scripts for managing the setup) are Git submodules.
 
-[setup-data-dir-info.py](setup-data-dir-info.py) is used to keep different paths to repositories 
+[setup-data-dir-info.py](setup-data-dir-info.py) is used to keep information about different paths to repositories 
 we want to create symlinks to. Such as dataset path, workdir path and returnn/pkg path.
 The symlinks are automatically managed with [setup-data-dir.py](setup-data-dir.py). 
 
