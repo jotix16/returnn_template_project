@@ -5,19 +5,19 @@ Every training experiment has one config in config-train, and that config name d
 The directory (at least the configs, scores, train/recog scripts, etc) is under Git.
 Returnn (crnn) and tools-multisetup (the scripts for managing the setup) are Git submodules.
 
-All data files (models checkpoints etc) are on the work file-server as specified
-in [setup-data-dir-info.py](setup-data-dir-info.py) using the symlink
-[setup-data-dir-symlink](setup-data-dir-symlink) in the base_dir. Similiarly the dataset's location is
-specified in [dataset-dir-info.py](dataset-dir-info.py) and symlinked with [dataset_symlink](dataset_symlink). 
+[setup-data-dir-info.py](setup-data-dir-info.py) is used to keep different paths to repositories 
+we want to create symlinks to. Such as dataset path, workdir path and returnn/pkg path.
 The symlinks are automatically managed with [setup-data-dir.py](setup-data-dir.py). 
 
-The files/folders kept in the work file-server [setup-data-dir-symlink](setup-data-dir-symlink) are:
+All data files (models checkpoints etc) in the work file-server 
+symlinked by [**setup-data-dir-symlink**](setup-data-dir-symlink) are captured with symlinks such as:
 - **data-train** -- logs, checkpoints created during training
 - **data-recog** -- scores, logs created during recognition
 - **logs-archive** -- not sure yet
 
-The files/folders kept in the work file-server [dataset_symlink](dataset_symlink) are:
-- **dataset_symlink** -- should link to the used dataset
+Beside [setup-data-dir-symlink](setup-data-dir-symlink) we have
+- [**dataset_symlink**](dataset_symlink) -- symlink showing to the dataset repository (normally set as `~/home/datasets`)
+- [**pkg_symlink**](pkg_symlink) -- symlink showing to `~/home/returnn/pkg`)
 
 ### Creating a new setup directory
 ``` python
