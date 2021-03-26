@@ -1,4 +1,7 @@
 # i6
-workdir_base = "/work/asr3/zeyer"
+import os
 
-
+if os.path.exists("/work"):
+  workdir_base = "/work/asr3/zeyer"
+else:
+  workdir_base = "/tmp"
