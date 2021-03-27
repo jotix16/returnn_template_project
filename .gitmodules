@@ -4,3 +4,6 @@
 [submodule "tools-multisetup"]
 	path = tools-multisetup
 	url = https://github.com/jotix16/tools-multisetup.git
+[submodule "config-train/code"]
+	path = config-train/code
+	url = https://github.com/jotix16/code.git
