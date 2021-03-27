@@ -1,0 +1,7 @@
+numpy
+h5py
+typing
+better_exchook
+lazy_object_proxy
+soundfile
+librosa
