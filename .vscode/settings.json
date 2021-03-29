@@ -1,0 +1,11 @@
+{
+  // ...
+  "search.exclude": {
+      "**/.git": true,
+      "**/returnn": true,
+      "**/pkg_symlink/github.com/rwth-i6": true,
+      "**/pkg_symlink/github.com/jotix16/returnn-experiments": true,
+      "**/tmp": true
+  },
+  // ...
+}
