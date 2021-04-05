@@ -7,5 +7,6 @@
       "**/pkg_symlink/github.com/jotix16/returnn-experiments": true,
       "**/tmp": true
   },
-  // ...
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.enabled": true,
 }
