@@ -48,7 +48,20 @@
         "focus": false,
         "panel": "shared",
         }
-
+    },
+    {
+      "label": "run",
+      "type": "shell",
+      "command": "${config:python.pythonPath} ./returnn/rnn.py ${file}",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        }
     },
   ]
 }
