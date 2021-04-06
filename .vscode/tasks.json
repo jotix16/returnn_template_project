@@ -1,0 +1,54 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "setup",
+      "type": "shell",
+      "command": "./setup.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "setup data dir",
+      "type": "shell",
+      "command": "./setup-data-dir.py",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "dump-dataset.py",
+      "type": "shell",
+      "command": "${config:python.pythonPath} ./returnn/tools/dump-dataset.py ${file} --dataset train",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        }
+    },
+    {
+      "label": "dump-forward.py",
+      "type": "shell",
+      "command": "${config:python.pythonPath} ./returnn/tools/dump-forward.py ${file}",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        }
+
+    },
+  ]
+}

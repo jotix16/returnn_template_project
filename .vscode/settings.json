@@ -7,6 +7,16 @@
       "**/pkg_symlink/github.com/jotix16/returnn-experiments": true,
       "**/tmp": true
   },
-  "python.linting.pycodestyleEnabled": true,
   "python.linting.enabled": true,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pycodestyleArgs": [
+      "--indent-size=2",
+      "--max-line-length=100",
+      "--ignore=E111,E114,E402,E501",
+      // E402 module not on top of file
+      // E501-ignore too long lines
+      // "--ignore=E402,F841,F401,E302,E305,E201,E202,E226,E231,E501",
+
+  ],
+  "python.pythonPath": "/Users/mikel/.conda/envs/playground/bin/python",
 }
