@@ -34,7 +34,7 @@
     {
       "label": "dump-dataset.py",
       "type": "shell",
-      "command": "${config:python.pythonPath} ./returnn/tools/dump-dataset.py ${file} --dataset train",
+      "command": "${config:python.pythonPath} ./returnn/tools/dump-dataset.py ${file} ${input:dump_dataset_options}",
       "options": {
         "cwd": "${workspaceFolder}",
         },
@@ -62,7 +62,7 @@
     {
       "label": "run",
       "type": "shell",
-      "command": "${config:python.pythonPath} ./returnn/rnn.py ${file}",
+      "command": "${config:python.pythonPath} returnn/rnn.py ${file} ${input:rnn_options}",
       "options": {
         "cwd": "${workspaceFolder}",
         },
@@ -73,5 +73,23 @@
         "panel": "shared",
         }
     },
-  ]
+  ],
+
+  "inputs": [
+    {
+        "id": "rnn_options",
+        "description": "Give options for rnn.py such as --task train ++device cpu",
+        "default": "--task nop ++device cpu",
+        "type": "promptString"
+    },
+    {
+      "id": "dump_dataset_options",
+      "description": "Give options for dump-dataset.py such as --dataset train --epoch 1",
+      "default": "--dataset train --epoch 1",
+      "type": "promptString"
+  },
+  ],
 }
+
+
+
