@@ -81,7 +81,7 @@
       "type": "shell",
       "command": "${config:python.pythonPath} returnn/rnn.py ${file} ${input:rnn_options}",
       "options": {
-        "cwd": "${workspaceFolder}",
+        "cwd": "${workspaceFolder}/data-train/${fileBasenameNoExtension}/",
         },
       "presentation": {
         "echo": true,
