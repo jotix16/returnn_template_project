@@ -3,8 +3,9 @@
   // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
+    // Setup tasks
     {
-      "label": "setup",
+      "label": "setup.sh",
       "type": "shell",
       "command": "./setup.sh",
       "options": {
@@ -18,12 +19,41 @@
         }
     },
     {
-      "label": "setupdir",
+      "label": "setup-data-dir.py",
       "type": "shell",
       "command": "./setup-data-dir.py",
       "options": {
         "cwd": "${workspaceFolder}"
       },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        }
+    },
+    {
+      "label": "create-train.sh",
+      "type": "shell",
+      "command": "./create-train.sh ${fileBasenameNoExtension}",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        }
+    },
+    // Testing tasks
+    {
+      "label": "dump-forward.py",
+      "type": "shell",
+      "command": "${config:python.pythonPath} ./returnn/tools/dump-forward.py ${file}",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        },
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -45,22 +75,9 @@
         "panel": "shared",
         }
     },
+    // Running tasks
     {
-      "label": "dump-forward.py",
-      "type": "shell",
-      "command": "${config:python.pythonPath} ./returnn/tools/dump-forward.py ${file}",
-      "options": {
-        "cwd": "${workspaceFolder}",
-        },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": true,
-        "panel": "shared",
-        }
-    },
-    {
-      "label": "run",
+      "label": "rnn.py",
       "type": "shell",
       "command": "${config:python.pythonPath} returnn/rnn.py ${file} ${input:rnn_options}",
       "options": {
