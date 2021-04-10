@@ -1,0 +1,66 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "DumpDataset",
+      "program": "${workspaceFolder}/returnn/tools/dump-dataset.py",
+      "args": [ "${file}",
+        "--dataset", "${input:dataset}",
+        "--epoch", "${input:epoch}",
+      ],
+      "type": "python",
+      "python": "${command:python.interpreterPath}",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+    },
+    {
+      "name": "rnn.py",
+      "program": "${workspaceFolder}/returnn/rnn.py",
+      "args": [ "${file}",
+        "++task", "${input:task}",
+        "++device", "${input:device}",
+      ],
+      "type": "python",
+      "python": "${command:python.interpreterPath}",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+    }
+  ],
+  "inputs": [
+  {
+    "id": "task",
+    "description": "--task",
+    "default": "train",
+    "type": "promptString"
+  },
+  {
+    "id": "device",
+    "description": "++device",
+    "default": "cpu",
+    "type": "promptString"
+  },
+  {
+    "id": "dataset",
+    "description": "--dataset",
+    "default": "train",
+    "type": "promptString"
+  },
+  {
+    "id": "epoch",
+    "description": "--epoch",
+    "default": "1",
+    "type": "promptString"
+  },
+  {
+    "id": "free_string",
+    "description": "",
+    "default": "1",
+    "type": "promptString"
+  },
+  ]
+}
