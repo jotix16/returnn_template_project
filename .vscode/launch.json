@@ -28,7 +28,7 @@
       "python": "${command:python.interpreterPath}",
       "request": "launch",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}",
+      "cwd": "${workspaceFolder}/data-train/${fileBasenameNoExtension}/",
     }
   ],
   "inputs": [

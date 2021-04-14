@@ -50,7 +50,9 @@
     {
       "label": "dump-forward.py",
       "type": "shell",
-      "command": "${config:python.pythonPath} ./returnn/tools/dump-forward.py ${file}",
+      "command": "${config:python.pythonPath}",
+      "args": ["./returnn/tools/dump-forward.py", "${file}",
+      ],
       "options": {
         "cwd": "${workspaceFolder}",
         },
@@ -63,8 +65,12 @@
     },
     {
       "label": "dump-dataset.py",
+      "command": "${config:python.pythonPath}",
+      "args": ["./returnn/tools/dump-dataset.py", "${file}",
+        "--dataset", "${input:dataset}",
+        "--epoch", "${input:epoch}"
+      ],
       "type": "shell",
-      "command": "${config:python.pythonPath} ./returnn/tools/dump-dataset.py ${file} ${input:dump_dataset_options}",
       "options": {
         "cwd": "${workspaceFolder}",
         },
@@ -78,11 +84,15 @@
     // Running tasks
     {
       "label": "rnn.py",
-      "type": "shell",
-      "command": "${config:python.pythonPath} returnn/rnn.py ${file} ${input:rnn_options}",
+      "command": "${config:python.pythonPath}",
+      "args": ["returnn/rnn.py", "${file}",
+        "--task", "${input:task}",
+        "--device", "${input:device}",
+      ],
       "options": {
         "cwd": "${workspaceFolder}/data-train/${fileBasenameNoExtension}/",
-        },
+      },
+      "type": "shell",
       "presentation": {
         "echo": true,
         "reveal": "always",
@@ -94,17 +104,29 @@
 
   "inputs": [
     {
-        "id": "rnn_options",
-        "description": "Give options for rnn.py such as --task train ++device cpu",
-        "default": "--task nop ++device cpu",
-        "type": "promptString"
+        "id": "task",
+        "description": "--task",
+        "default": "train",
+        "type": "promptString",
     },
     {
-      "id": "dump_dataset_options",
-      "description": "Give options for dump-dataset.py such as --dataset train --epoch 1",
-      "default": "--dataset train --epoch 1",
-      "type": "promptString"
-  },
+        "id": "device",
+        "description": "--device",
+        "default": "cpu",
+        "type": "promptString",
+    },
+    {
+        "id": "dataset",
+        "description": "--dataset",
+        "default": "train",
+        "type": "promptString",
+    },
+    {
+        "id": "epoch",
+        "description": "--epoch",
+        "default": "1",
+        "type": "promptString",
+    },
   ],
 }
 
