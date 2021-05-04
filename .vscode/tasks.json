@@ -35,7 +35,9 @@
     {
       "label": "create-train.sh",
       "type": "shell",
-      "command": "./create-train.sh ${fileBasenameNoExtension}",
+      "command": "${config:python.pythonPath}",
+      "args": ["tools-multisetup/create-train.py", "${fileBasenameNoExtension}",
+      ],
       "options": {
         "cwd": "${workspaceFolder}",
         },
