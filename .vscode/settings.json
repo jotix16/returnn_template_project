@@ -18,6 +18,6 @@
       // "--ignore=E402,F841,F401,E302,E305,E201,E202,E226,E231,E501",
 
   ],
-  "python.pythonPath": "/Users/mikel/.conda/envs/playground/bin/python",
+  "python.pythonPath": "/work/tools/asr/python/3.8.0_tf_1.15-generic+cuda10.1/bin//python",
   "python.envFile": "${workspaceFolder}/.vscode/.env",
 }
