@@ -33,6 +33,14 @@
         }
     },
     {
+      "label": "remove net-model",
+      "type": "shell",
+      "command": "rm -rf data-train/${fileBasenameNoExtension}/net-model",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        },
+    },
+    {
       "label": "create-train.sh",
       "type": "shell",
       "command": "${config:python.pythonPath}",
@@ -59,6 +67,7 @@
         "cwd": "${workspaceFolder}",
         },
       "presentation": {
+        "clear": true,
         "echo": true,
         "reveal": "always",
         "focus": true,
@@ -77,6 +86,7 @@
         "cwd": "${workspaceFolder}",
         },
       "presentation": {
+        "clear": true,
         "echo": true,
         "reveal": "always",
         "focus": true,
@@ -96,6 +106,7 @@
       },
       "type": "shell",
       "presentation": {
+        "clear": true,
         "echo": true,
         "reveal": "always",
         "focus": true,
