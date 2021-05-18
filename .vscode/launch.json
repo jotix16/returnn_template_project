@@ -29,6 +29,15 @@
       "request": "launch",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/data-train/${fileBasenameNoExtension}/",
+    },
+    {
+      "name": "deb_py",
+      "program": "${input:file}",
+      "type": "python",
+      "python": "${command:python.interpreterPath}",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
     }
   ],
   "inputs": [
@@ -60,6 +69,12 @@
     "id": "free_string",
     "description": "",
     "default": "1",
+    "type": "promptString"
+  },
+  {
+    "id": "file",
+    "description": "--file",
+    "default": "",
     "type": "promptString"
   },
   ]
