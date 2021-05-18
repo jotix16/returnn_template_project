@@ -15,6 +15,6 @@ dataset = os.path.join(os.environ["HOME"], "datasets")
 
 # Dump-align
 if os.path.exists("/work"):
-  dump_align = "/work/asr4/zeyer/setups-data/switchboard/2019-10-22--e2e-bpe1k/dump-align/"
+  dump_align = "/work/asr4/zeyer/setups-data/switchboard/2019-10-22--e2e-bpe1k/dump-align"
 else:
   dump_align = "/tmp"
